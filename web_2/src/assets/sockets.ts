@@ -1,5 +1,5 @@
 import Peer, { DataConnection } from "peerjs";
-import { TranslateCode, code } from "./code.env.ts";
+import { TranslateCode, code } from "./code.env";
 
 export function io(uri: string): Promise<Socket> {
     return new Promise((resolve, reject) => {
@@ -57,7 +57,7 @@ export class Socket {
                 if (xhandler !== undefined) {
                     xhandler(d.args);
                 }
-            } catch {}
+            } catch { }
         });
 
         this.client.on("error", (error) => {
@@ -69,12 +69,12 @@ export class Socket {
                 if (xhandler !== undefined) {
                     xhandler("");
                 }
-            } catch {}
+            } catch { }
         });
     }
     public on(event_name: string | "disconnect", handler: (args: any) => void) {
         this.events.set(event_name, handler);
-        this.client.on("data", () => {});
+        this.client.on("data", () => { });
     }
     public emit(event_name: string, args?: any) {
         this.client.send(JSON.stringify({ event: event_name, args: args ?? undefined }));
@@ -94,8 +94,8 @@ export class Server {
     constructor(idf?: (thisobj: Server) => void, onf?: (s: Socket, server: Server) => void) {
         var error = true;
 
-        var _code:string = "";
-        var _socket:Peer;
+        var _code: string = "";
+        var _socket: Peer;
 
         while (error) {
             try {
@@ -109,17 +109,17 @@ export class Server {
                 error = true;
             }
         }
-        this.code= _code;
+        this.code = _code;
         // @ts-ignore
         this.socket = _socket;
         this.logFunction = (...data) => {
             this.logs.push(data);
             this.renderFunction(this.logs);
         };
-        this.renderFunction = () => {};
+        this.renderFunction = () => { };
         this.socket.on("open", async () => {
             idf?.(this);
-            
+
         });
 
         this.socket.on("connection", (dataConnection) => {
