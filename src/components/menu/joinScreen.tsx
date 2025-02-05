@@ -13,9 +13,7 @@ export default function JoinScreen(props: {
 }) {
  
     return (
-        <>
-          
-          
+        <> 
           <>
                     <div key={"online-code"}>
                         <p>please enter your code:</p>

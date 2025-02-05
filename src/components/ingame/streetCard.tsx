@@ -161,7 +161,7 @@ function RailroadCard({ args }: { args: RailroadDisplayInfo }) {
                         <p>{200}M</p>
                     </li>
                 </ol>
-                <h4>mortgage Value 100M</h4>
+              
                 <hr />
                 <br />
                 <h4>{args.cardCost}M</h4>

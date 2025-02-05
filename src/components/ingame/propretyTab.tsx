@@ -40,14 +40,14 @@ const propretyTab = forwardRef<PropretyTabRef, PropretyTabProps>((props, ref) =>
         isMortaged: (location: number) => {
             const localP = props.players.filter((v) => v.id === props.socket.id)[0];
             const a = localP.properties.filter((v) => v.group === "Railroad" && v.posistion === location)[0];
-            return a.morgage !== undefined && a.morgage === true;
+            // return a.morgage !== undefined && a.morgage === true;
         },
         buttons: {
             cancel: () => {
                 const location = currentCardPosition;
                 const localP = props.players.filter((v) => v.id === props.socket.id)[0];
                 const prp = localP.properties.filter((v) => v.group === "Railroad" && v.posistion === location)[0];
-                prp.morgage = false;
+                // prp.morgage = false;
 
                 props.Morgage.onCanc(10, propretyMap.get(prp.posistion)?.name ?? "");
                 localP;
@@ -59,7 +59,7 @@ const propretyTab = forwardRef<PropretyTabRef, PropretyTabProps>((props, ref) =>
                 const location = currentCardPosition;
                 const localP = props.players.filter((v) => v.id === props.socket.id)[0];
                 const prp = localP.properties.filter((v) => v.group === "Railroad" && v.posistion === location)[0];
-                prp.morgage = true;
+                // prp.morgage = true;
 
                 props.Morgage.onMort(100, propretyMap.get(prp.posistion)?.name ?? "");
 
@@ -168,7 +168,7 @@ const propretyTab = forwardRef<PropretyTabRef, PropretyTabProps>((props, ref) =>
                                     backgroundColor: translateGroup(v.group),
                                 }}
                             ></i>
-                            <h3 style={v.morgage !== undefined && v.morgage === true ? { textDecoration: "line-through white" } : {}}>
+                            <h3>
                                 {propretyMap.get(v.posistion)?.name ?? ""}
                             </h3>
                             <div>
@@ -205,7 +205,7 @@ const propretyTab = forwardRef<PropretyTabRef, PropretyTabProps>((props, ref) =>
                             {mortgageApi.isRailroad(currentCardPosition) && props.allowMortgage ? (
                                 <>
                                     {" "}
-                                    <h2>Actions</h2>
+                                    {/* <h2>Actions</h2>
                                     {mortgageApi.isMortaged(currentCardPosition) ? (
                                         <button className="railroads-actions" onClick={mortgageApi.buttons.cancel}>
                                             Cancel Mortgage [Pay 10M]
@@ -215,7 +215,7 @@ const propretyTab = forwardRef<PropretyTabRef, PropretyTabProps>((props, ref) =>
                                             {" "}
                                             Mortgage [Pay 100M]
                                         </button>
-                                    )}
+                                    )} */}
                                 </>
                             ) : (
                                 <></>

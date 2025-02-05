@@ -9,7 +9,7 @@ import JoinScreen from "../../components/menu/joinScreen.tsx";
 import { main as onlineServer } from "../../assets/server.ts";
 import Slider from "../../components/utils/slider.tsx";
 import { TranslateCode } from "../../assets/code.env.ts";
-import { CookieManager } from "../../assets/CookieManager.ts";
+import {CookieManager} from "../../assets/cookieManager.ts";
 
 export default function Home() {
     var cookie: MonopolyCookie;
@@ -176,7 +176,7 @@ export default function Home() {
                         onClick={() => {
                             SetTab(0);
                         }}
-                        data-tooltip-hover="play"
+                        data-tooltip-hover="Play"
                     >
                         <img src="./icon.png" alt="" />
                     </button>
@@ -185,7 +185,7 @@ export default function Home() {
                         onClick={() => {
                             SetTab(1);
                         }}
-                        data-tooltip-hover="server"
+                        data-tooltip-hover="Server"
                     >
                         <img src="./server.png" alt="" />
                     </button>
@@ -196,7 +196,7 @@ export default function Home() {
                         onClick={() => {
                             SetTab(4);
                         }}
-                        data-tooltip-hover="monopolySettings"
+                        data-tooltip-hover="Settings"
                     >
                         <img src="./settings.png" alt="" />
                     </button>
@@ -306,7 +306,6 @@ export default function Home() {
                             <JoinScreen
                                 disabled={disabled}
                                 fbUser={fbUser}
-                               
                                 joinViaCode={() => {
                                     joinButtonClicked();
                                 }}

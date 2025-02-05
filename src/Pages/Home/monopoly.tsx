@@ -614,9 +614,9 @@ function App({ socket, name, server }: { socket: Socket; name: string; server: S
                                                     } else if (proprety.group === "Railroad") {
                                                         const count = p.properties
                                                             .filter((v) => v.group === "Railroad")
-                                                            .filter(
-                                                                (v) => v.morgage === undefined || (v.morgage !== undefined && v.morgage === false)
-                                                            ).length;
+                                                            // .filter(
+                                                            //     (v) => v.morgage === undefined || (v.morgage !== undefined && v.morgage === false)
+                                                            // ).length;
                                                         const rents = [0, 25, 50, 100, 200];
                                                         payment_ammount = rents[count];
                                                     } else if (prp.count === 0) {
@@ -638,14 +638,14 @@ function App({ socket, name, server }: { socket: Socket; name: string; server: S
                                                     audio.volume = ((settings?.audio[1] ?? 100) / 100) * ((settings?.audio[0] ?? 100) / 100);
                                                     audio.loop = false;
                                                     audio.play();
-                                                    if (prp.morgage === undefined || (prp.morgage !== undefined && prp.morgage === false))
-                                                        localPlayer.balance -= payment_ammount;
-                                                    engineRef.current?.applyAnimation(1);
-                                                    socket.emit("pay", {
-                                                        balance: payment_ammount,
-                                                        from: socket.id,
-                                                        to: p.id,
-                                                    });
+                                                    // if (prp.morgage === undefined || (prp.morgage !== undefined && prp.morgage === false))
+                                                    //     localPlayer.balance -= payment_ammount;
+                                                    // engineRef.current?.applyAnimation(1);
+                                                    // socket.emit("pay", {
+                                                    //     balance: payment_ammount,
+                                                    //     from: socket.id,
+                                                    //     to: p.id,
+                                                    // });
                                                     engineRef.current?.applyAnimation(1);
 
                                                     socket.emit(
@@ -1188,11 +1188,7 @@ function App({ socket, name, server }: { socket: Socket; name: string; server: S
                                                             } else if (proprety.group === "Railroad") {
                                                                 const count = p.properties
                                                                     .filter((v) => v.group === "Railroad")
-                                                                    .filter(
-                                                                        (v) =>
-                                                                            v.morgage === undefined ||
-                                                                            (v.morgage !== undefined && v.morgage === false)
-                                                                    ).length;
+                                                                   .length;
                                                                 const rents = [0, 25, 50, 100, 200];
                                                                 payment_ammount = rents[count] * (c.rentmultiplier ?? 1);
 
@@ -1209,8 +1205,7 @@ function App({ socket, name, server }: { socket: Socket; name: string; server: S
                                                                     ((settings?.audio[1] ?? 100) / 100) * ((settings?.audio[0] ?? 100) / 100);
                                                                 audio.loop = false;
                                                                 audio.play();
-                                                                if (prp.morgage === undefined || (prp.morgage !== undefined && prp.morgage === false))
-                                                                    xplayer.balance -= payment_ammount;
+                                                               
                                                                 engineRef.current?.applyAnimation(1);
                                                                 socket.emit("pay", {
                                                                     balance: payment_ammount,
@@ -1418,7 +1413,7 @@ which is ${payment_ammount}
                             if (localPlayer === undefined) return;
                             if (settings !== undefined && settings.notifications === true)
                                 notifyRef.current?.message(
-                                    `${a} of money is deducted from the account for canceling mortgage`,
+                                    `${a} of money is deducted from the account for canceling`,
                                     "info",
                                     2,
                                     () => {},
@@ -1431,7 +1426,7 @@ which is ${payment_ammount}
                             audio.volume = 0.5 * ((settings?.audio[1] ?? 100) / 100) * ((settings?.audio[0] ?? 100) / 100);
                             audio.loop = false;
                             audio.play();
-                            socket.emit("history", history(`${clients.get(socket.id)?.username ?? "unknown player"} cancel mortgage on ${prpName}`));
+                            socket.emit("history", history(`${clients.get(socket.id)?.username ?? "unknown player"} cancel  on ${prpName}`));
                             SetClients(new Map(clients.set(socket.id, localPlayer)));
                         },
                         onMort: (a, prpName) => {
@@ -1441,14 +1436,14 @@ which is ${payment_ammount}
                             const localPlayer = clients.get(socket.id);
                             if (localPlayer === undefined) return;
                             if (settings !== undefined && settings.notifications === true)
-                                notifyRef.current?.message(`${a} of money is deducted from the account for mortgage`, "info", 2, () => {}, false);
+                                notifyRef.current?.message(`${a} of money is deducted from the account for `, "info", 2, () => {}, false);
                             localPlayer.balance -= a;
                             engineRef.current?.applyAnimation(1);
                             var audio = new Audio("./buying1.mp3");
                             audio.volume = 0.5 * ((settings?.audio[1] ?? 100) / 100) * ((settings?.audio[0] ?? 100) / 100);
                             audio.loop = false;
                             audio.play();
-                            socket.emit("history", history(`${clients.get(socket.id)?.username ?? "unknown player"} mortgaged ${prpName}`));
+                            socket.emit("history", history(`${clients.get(socket.id)?.username ?? "unknown player"} ${prpName}`));
                             SetClients(new Map(clients.set(socket.id, localPlayer)));
                         },
                     }}
@@ -1588,8 +1583,8 @@ which is ${payment_ammount}
                                     <td>{selectedMode.AllowDeals ? "ALLOWED" : "NOT-ALLOWED"}</td>
                                 </tr>
                                 <tr>
-                                    <td>Mortgage: </td>
-                                    <td>{selectedMode.mortageAllowed ? "ALLOWED" : "NOT-ALLOWED"}</td>
+                                   
+                                    
                                 </tr>
                                 <tr>
                                     <td>Starting Cash: </td>
@@ -1631,7 +1626,7 @@ which is ${payment_ammount}
                                     const winstateChoice = window.prompt("Winning State\n1=last-standing\n2=monopols\n3=monopols & trains", "3");
                                     // const buyingChoice = window.prompt("Buying System State\n1=following-order\n2=card-firsts\n3=everything", "3");
                                     const allowTrade = window.confirm("Allow Trades");
-                                    const allowMortgage = window.confirm("Allow Mortgage");
+                                    
                                     const startingCash = window.prompt("Starting Cash", "1500");
                                     const turnTimer = window.prompt("Turn Timer", "0");
                                     const v = {
@@ -1640,7 +1635,7 @@ which is ${payment_ammount}
                                         WinningMode:
                                             winstateChoice === "2" ? "monopols" : winstateChoice === "3" ? "monopols & trains" : "last-standing",
                                         Name: "Custom Mode",
-                                        mortageAllowed: allowMortgage,
+                                        
                                         startingCash: startingCash === null ? 1500 : parseInt(startingCash) ?? 1500,
                                         turnTimer: turnTimer === null ? undefined : parseInt(turnTimer) ?? undefined,
                                     } as MonopolyMode;
