@@ -220,8 +220,7 @@ const MonopolyNav = forwardRef<MonopolyNavRef, MonopolyNavProps>((prop, ref) => 
                         ref={propretyRef}
                         players={displayPlayers}
                         socket={prop.socket}
-                        Morgage={prop.Morgage}
-                        allowMortgage={prop.selectedMode.mortageAllowed}
+                        
                     />
                 ) : tabIndex == 2 ? (
                     <>

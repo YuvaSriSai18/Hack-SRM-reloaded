@@ -26,28 +26,28 @@ export const MonopolyModes = [
     {
         AllowDeals: true,
         WinningMode: "last-standing",
-        // BuyingSystem: "following-order",
+      
         Name: "Classic",
         startingCash: 1500,
-        mortageAllowed: true,
+       
         turnTimer: undefined,
     },
     {
         AllowDeals: false,
         WinningMode: "monopols & trains",
-        // BuyingSystem: "everything",
+      
         Name: "Monopol",
         startingCash: 1500,
-        mortageAllowed: false,
+     
         turnTimer: undefined,
     },
     {
         AllowDeals: false,
         WinningMode: "last-standing",
-        // BuyingSystem: "card-firsts",
+       
         Name: "Run-Down",
         startingCash: 1500,
-        mortageAllowed: false,
+   
         turnTimer: 30,
     },
 ] as MonopolyMode[];
@@ -58,7 +58,7 @@ export interface MonopolyMode {
     AllowDeals: boolean;
     Name: string;
     startingCash: number;
-    mortageAllowed: boolean;
+   
     turnTimer: undefined | number;
 }
 
@@ -67,7 +67,7 @@ export interface PlayerProprety {
     count: 0 | 1 | 2 | 3 | 4 | "h";
     group: string;
     rent?: number;
-    morgage?: boolean;
+ 
 }
 
 export interface historyAction {

@@ -11,7 +11,7 @@
             "group": "Purple",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+           
             "probability": 2.1314,
             "rel": {
                 "Square": "Mediterranean Avenue",
@@ -34,7 +34,7 @@
             "group": "Purple",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+           
             "probability": 2.1624,
             "rel": {
                 "Square": "Baltic Avenue",
@@ -57,7 +57,7 @@
             "group": "lightgreen",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+           
             "rel": {
                 "Square": "Oriental Avenue",
                 "Probability % (Jail Short)": 2.2621,
@@ -79,7 +79,7 @@
             "group": "lightgreen",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+          
             "rel": {
                 "Square": "Vermont Avenue",
                 "Probability % (Jail Short)": 2.321,
@@ -101,7 +101,7 @@
             "group": "lightgreen",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+            
             "rel": {
                 "Square": "Connecticut Avenue",
                 "Probability % (Jail Short)": 2.3003,
@@ -123,7 +123,7 @@
             "group": "Violet",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+          
             "rel": {
                 "Square": "St. Charles Place",
                 "Probability % (Jail Short)": 2.7017,
@@ -145,7 +145,7 @@
             "group": "Violet",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+            
             "rel": {
                 "Square": "States Avenue",
                 "Probability % (Jail Short)": 2.3721,
@@ -167,7 +167,7 @@
             "group": "Violet",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+            
             "rel": {
                 "Square": "Virginia Avenue",
                 "Probability % (Jail Short)": 2.4649,
@@ -189,7 +189,7 @@
             "group": "Orange",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+           
             "rel": {
                 "Square": "St. James Place",
                 "Probability % (Jail Short)": 2.7924,
@@ -211,7 +211,7 @@
             "group": "Orange",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+          
             "rel": {
                 "Square": "Tennessee Avenue",
                 "Probability % (Jail Short)": 2.9356,
@@ -233,7 +233,7 @@
             "group": "Orange",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+            
             "rel": {
                 "Square": "New York Avenue",
                 "Probability % (Jail Short)": 3.0852,
@@ -255,7 +255,7 @@
             "group": "Red",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+        
             "rel": {
                 "Square": "Kentucky Avenue",
                 "Probability % (Jail Short)": 2.8358,
@@ -277,7 +277,7 @@
             "group": "Red",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+          
             "rel": {
                 "Square": "Indiana Avenue",
                 "Probability % (Jail Short)": 2.7357,
@@ -299,7 +299,7 @@
             "group": "Red",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+         
             "rel": {
                 "Square": "Illinois Avenue",
                 "Probability % (Jail Short)": 3.1858,
@@ -321,7 +321,7 @@
             "group": "Yellow",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+          
             "rel": {
                 "Square": "Atlantic Avenue",
                 "Probability % (Jail Short)": 2.7072,
@@ -343,7 +343,7 @@
             "group": "Yellow",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+         
             "rel": {
                 "Square": "Ventnor Avenue",
                 "Probability % (Jail Short)": 2.6789,
@@ -365,7 +365,7 @@
             "group": "Yellow",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+           
             "rel": {
                 "Square": "Marvin Gardens",
                 "Probability % (Jail Short)": 2.5861,
@@ -387,7 +387,7 @@
             "group": "darkgreen",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+         
             "rel": {
                 "Square": "Pacific Avenue",
                 "Probability % (Jail Short)": 2.6774,
@@ -409,7 +409,7 @@
             "group": "darkgreen",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+         
             "rel": {
                 "Square": "North Carolina Avenue",
                 "Probability % (Jail Short)": 2.6252,
@@ -431,7 +431,7 @@
             "group": "darkgreen",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+            
             "rel": {
                 "Square": "Pennsylvania Avenue",
                 "Probability % (Jail Short)": 2.5006,
@@ -453,7 +453,7 @@
             "group": "darkblue",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+          
             "rel": {
                 "Square": "Park Place",
                 "Probability % (Jail Short)": 2.1864,
@@ -475,7 +475,7 @@
             "group": "darkblue",
             "ownedby": -1,
             "buildings": 0,
-            "mortgaged": false,
+         
             "rel": {
                 "Square": "Boardwalk",
                 "Probability % (Jail Short)": 2.626,
@@ -493,7 +493,7 @@
             "price": 150,
             "group": "Utilities",
             "ownedby": -1,
-            "mortgaged": false,
+            
             "rel": {
                 "Square": "Electric Company",
                 "Probability % (Jail Short)": 2.604,
@@ -510,7 +510,7 @@
             "price": 150,
             "group": "Utilities",
             "ownedby": -1,
-            "mortgaged": false,
+           
             "rel": {
                 "Square": "Water Works",
                 "Probability % (Jail Short)": 2.8074,
@@ -527,7 +527,7 @@
             "price": 200,
             "group": "Railroad",
             "ownedby": -1,
-            "mortgaged": false,
+          
             "probability": 2.1314,
             "rel": {
                 "Square": "Reading Railroad",
@@ -545,7 +545,7 @@
             "price": 200,
             "group": "Railroad",
             "ownedby": -1,
-            "mortgaged": false,
+       
             "rel": {
                 "Square": "Pennsylvania Railroad",
                 "Probability % (Jail Short)": 2.92,
@@ -562,7 +562,7 @@
             "price": 200,
             "group": "Railroad",
             "ownedby": -1,
-            "mortgaged": false,
+          
             "oprice": 200,
             "averageProbability": 2.975
         },
@@ -573,7 +573,7 @@
             "price": 200,
             "group": "Railroad",
             "ownedby": -1,
-            "mortgaged": false,
+         
             "oprice": 200,
             "averageProbability": 2.3609500000000002
         },
