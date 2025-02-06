@@ -1,39 +1,58 @@
-import { ethers } from 'ethers';
-import React, { useState } from 'react';
+import { ethers } from "ethers";
+import { useState } from "react";
 
+import { Monopoly_Contract_Address } from "../Contract_ABI_Address/Monopoly_Property_Address";
+import { Monopoly_Contract_ABI } from "../Contract_ABI_Address/Monopoly_Property_ABI";
+// Replace with your contract address
+const CONTRACT_ADDRESS = Monopoly_Contract_Address;
+
+// Replace with your contract ABI
+const CONTRACT_ABI = Monopoly_Contract_ABI
 
 export default function ConnectWallet() {
   const [walletAddress, setWalletAddress] = useState("");
+  const [isConnected, setIsConnected] = useState(false);
 
-  async function connectWallets() {
-    if (typeof window.ethereum !== 'undefined') {
-      await connectWallet();
-
-      const provider = new ethers.BrowserProvider(window.ethereum);
-    }
-  }
-
+  // Connect Wallet
   const connectWallet = async () => {
     if (window.ethereum) {
-      console.log("Ethereum is available");
-
       try {
-        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
-        if (accounts.length > 0) {
-          setWalletAddress(accounts[0]);
-        }
+        const accounts = await window.ethereum.request({ method: "eth_requestAccounts" });
+        setWalletAddress(accounts[0]);
+        connectToContract();
       } catch (error) {
         console.error("Error connecting to wallet:", error);
       }
     } else {
-      console.log("Ethereum is not available. Please install MetaMask.");
+      alert("Please install MetaMask!");
+    }
+  };
+
+  // Connect to Smart Contract
+  const connectToContract = async () => {
+    try {
+      const provider = new ethers.BrowserProvider(window.ethereum);
+      const signer = await provider.getSigner();
+      const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+      
+      console.log("Connected to contract:", contract);
+      setIsConnected(true);
+    } catch (error) {
+      console.error("Error connecting to contract:", error);
     }
   };
 
   return (
-    <>
-      <button onClick={connectWallet}>Connect to Wallet</button>
-      <h3>{walletAddress ? `Connected: ${walletAddress}` : "Not Connected"}</h3>
-    </>
+    <div>
+      <h2>Connect Wallet & Smart Contract</h2>
+      {walletAddress ? (
+        <>
+          <p><strong>Connected Wallet:</strong> {walletAddress}</p>
+          <p><strong>Contract Status:</strong> {isConnected ? "Connected ✅" : "Not Connected ❌"}</p>
+        </>
+      ) : (
+        <button onClick={connectWallet}>Connect Wallet</button>
+      )}
+    </div>
   );
 }
