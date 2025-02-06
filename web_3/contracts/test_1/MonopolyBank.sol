@@ -12,7 +12,7 @@ contract MonopolyBank is Ownable {
     MonopolyToken public monopolyToken;
     MonopolyProperty public propertyContract;
     
-    constructor(address initialOwner, address tokenAddress, address propertyAddress) Ownable(initialOwner) {
+    constructor(address tokenAddress, address propertyAddress) Ownable(msg.sender) {
         monopolyToken = MonopolyToken(tokenAddress);
         propertyContract = MonopolyProperty(propertyAddress);
     }

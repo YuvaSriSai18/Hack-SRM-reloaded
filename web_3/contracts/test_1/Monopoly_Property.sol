@@ -22,7 +22,7 @@ contract MonopolyProperty is ERC721URIStorage, Ownable {
     event PropertyRegistered(uint256 propertyId, uint256 boardId, uint256 price, uint256 rent);
     event PropertyTransferred(uint256 propertyId, address from, address to);
     
-    constructor(address initialOwner) ERC721("MonopolyProperty", "MNP-NFT") Ownable(initialOwner) {}
+    constructor() ERC721("MonopolyProperty", "MNP-NFT") Ownable(msg.sender) {}
     
     function registerProperty(uint256 boardId, uint256 price, uint256 rent) external onlyOwner {
         uint256 propertyId = nextPropertyId++;

@@ -15,7 +15,7 @@ contract MonopolyToken is ERC20, Ownable {
     event GameBoardCreated(uint256 boardId);
     event TokensMinted(uint256 boardId, address[] players, uint256 amount);
     
-    constructor(address initialOwner) ERC20("MonopolyToken", "MNP") Ownable(initialOwner) {}
+    constructor() ERC20("MonopolyToken", "MNP") Ownable(msg.sender) {}
     
     function createGameBoard(uint256 boardId, uint256 initialBankSupply, address[] memory players, uint256 playerInitialFunds) external onlyOwner {
         require(!gameBoards[boardId].exists, "Game board already exists");
