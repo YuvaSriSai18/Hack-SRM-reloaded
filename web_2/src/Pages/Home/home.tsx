@@ -78,7 +78,7 @@ export default function Home() {
 
     const joinButtonClicked = async () => {
         if (name.replace(" ", "").length === 0) {
-            notifyRef.current?.message("please add your name before joining", "info", 2);
+            notifyRef.current?.message("Please add your name before joining", "info", 2);
             return;
         }
 
@@ -118,19 +118,19 @@ export default function Home() {
                         SetDisabled(false);
                         break;
                     case 1:
-                        notifyRef.current?.message("the game has already begun", "error", 2, () => {
+                        notifyRef.current?.message("The game has already begun", "error", 2, () => {
                             SetDisabled(false);
                         });
                         socket.disconnect();
                         break;
                     case 2:
-                        notifyRef.current?.message("too many players on the server", "error", 2, () => {
+                        notifyRef.current?.message("Too many players on the server", "error", 2, () => {
                             SetDisabled(false);
                         });
                         socket.disconnect();
                         break;
                     default:
-                        notifyRef.current?.message("unkown error", "error", 2, () => {
+                        notifyRef.current?.message("Unkown error", "error", 2, () => {
                             SetDisabled(false);
                         });
                         socket.disconnect();
@@ -155,7 +155,7 @@ export default function Home() {
     function startButtonClicked(bots: botInitial[]) {
         try {
             if (name.replace(" ", "").length === 0) {
-                notifyRef.current?.message("please add your name before joining", "info", 2);
+                notifyRef.current?.message("Please add your name before joining", "info", 2);
                 return;
             }
 
@@ -204,6 +204,102 @@ export default function Home() {
                 </nav>
                 <main>
                     {tabIndex === 4 ? (
+
+                      <SettingsNav />
+                    )  :
+                    tabIndex === 1 ? (
+                        <>
+                            <header>
+                                <p
+                                    style={{
+                                        fontSize: 12,
+                                        marginBottom: 0,
+                                    }}
+                                >
+                                  
+                                </p>
+                                <h3>Run A Server</h3>
+                            </header>
+                            {server !== undefined ? (
+                                <>
+                                    <p>server is already running, check the console.</p>
+                                    <table>
+                                        <tr>
+                                            <td>Code</td>
+                                            <td style={{ userSelect: "all" }}>{server.code}</td>
+                                        </tr>
+                                    </table>
+                                    <center>
+                                        {" "}
+                                        <button
+                                            key={"kllserver-button"}
+                                            style={{
+                                                backgroundColor: "red",
+                                                marginTop: 12,
+                                            }}
+                                            onClick={() => {
+                                                server.stop();
+                                                SetServer(undefined);
+                                            }}
+                                        >
+                                            Kill Server
+                                        </button>
+                                    </center>
+                                </>
+                            ) : (
+                                <>
+                                    <p>All the servers logs will can be seen in the console</p>
+                                    <table>
+                                        <tr>
+                                            <td>PlayersCount</td>
+                                            <td>
+                                                <Slider
+                                                    onChange={(e) => {
+                                                        SetServerPCount(parseInt(e.currentTarget.value));
+                                                    }}
+                                                    max={6}
+                                                    min={1}
+                                                    defaultValue={serverPCount}
+                                                    step={1}
+                                                />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                    <center>
+                                        {" "}
+                                        <button
+                                            key={"startserver-button"}
+                                            style={{
+                                                marginTop: 13,
+                                            }}
+                                            onClick={(e) => {
+                                                e.currentTarget.disabled = true;
+                                                e.currentTarget.innerHTML = "Starting Server";
+                                                onlineServer(serverPCount, (host, server) => {
+                                                    server.code = host;
+                                                    SetAddress(host);
+                                                    SetServer(server);
+                                                    try {
+                                                        e.currentTarget.disabled = false;
+                                                    } catch {}
+                                                });
+                                            }}
+                                        >
+                                            Run Server
+                                        </button>
+                                    </center>
+                                </>
+                            )}
+                        </>
+                    ) : (
+                        <>
+                            <header>
+                                Welcome to the <h3>MONOPOLY</h3>{" "}
+                                <p
+                                    style={{ fontSize: 9, cursor: "pointer", opacity: 0.8, width: "fit-content" }}
+                                    onClick={() => {
+                                        document.location.href = "/";
+
                         <SettingsNav />
                     ) :
                         tabIndex === 1 ? (
@@ -309,6 +405,7 @@ export default function Home() {
                                     fbUser={fbUser}
                                     joinViaCode={() => {
                                         joinButtonClicked();
+
                                     }}
                                     SetAddress={SetAddress}
                                     SetName={SetName}
