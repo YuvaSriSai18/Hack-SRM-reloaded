@@ -1,7 +1,7 @@
 
 # Monopoly Game
 
-This is a Monopoly Game made to showcase a Blockchain (Web3) technology made by us using ERC20, NFT and Etherium Faucets.
+This is a Monopoly Game made to showcase a Blockchain (Web3) technology made by us using ERC20, NFT and Ethereum.
 
 
 ## Authors
