@@ -4,7 +4,7 @@
 This is a Monopoly Game made to showcase a Blockchain (Web3) technology made by us using ERC20, NFT and Ethereum.
 
 
-## Authors
+## Dev's
 
 - [@YuvaSriSai18](https://www.https://github.com/YuvaSriSai18)
 - [@Pranav2885](https://www.github.com/pranav2885)
