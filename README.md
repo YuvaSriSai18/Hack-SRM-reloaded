@@ -11,7 +11,9 @@ This is a Monopoly Game made to showcase a Blockchain (Web3) technology made by 
 - [@SathvikInguva](https://www.github.com/sathvikinguva)
 - [@MeghanaChowdary29042004](https://www.github.com/meghanachowdary29042004)
 
-
+## Tech Stack
+- React with Typescript
+- Solidity
 
 ## Run Locally
 
