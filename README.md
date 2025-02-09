@@ -13,6 +13,7 @@ This is a Monopoly Game made to showcase a Blockchain (Web3) technology made by 
 
 ## Tech Stack
 - React with Typescript
+- Web Sockets
 - Solidity
 
 ## Run Locally
